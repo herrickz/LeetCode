@@ -25,6 +25,7 @@ def rev_int(x):
         
         ret_int = int(ret_str)
         
+        # check for overflow values
         if ret_int > overflow_pos:
             return 0
         elif ret_int < overflow_neg:
