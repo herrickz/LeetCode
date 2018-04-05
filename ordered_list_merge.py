@@ -26,8 +26,10 @@ def mergeTwoLists(l1, l2):
 
     if l1.val < l2.val:
         ret_ln = ListNode(l1.val)
+        l1 = l1.next
     else:
         ret_ln = ListNode(l2.val)
+        l2 = l2.next
 
     temp = ret_ln
 
