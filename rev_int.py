@@ -35,9 +35,9 @@ def rev_int(x):
         
         return ret_int
 
-class TestStringMethods(unittest.TestCase):
+class TestReverseInteger(unittest.TestCase):
 
-    def test_upper(self):
+    def test_rev_int(self):
         input_val = 21
         expected = 12
         actual = rev_int(input_val)
