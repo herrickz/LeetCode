@@ -1,6 +1,7 @@
+import unittest
+
 # https://leetcode.com/problems/merge-two-sorted-lists/description/
-# [1,2,4]
-# [1,3,4]
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -15,7 +16,7 @@ class ListNode:
         
         return ",".join(l)
 
-def mergeTwoLists(l1, l2):
+def merge_two_lists(l1, l2):
     """
     :type l1: ListNode
     :type l2: ListNode
@@ -55,13 +56,23 @@ def mergeTwoLists(l1, l2):
 
     return ret_ln
 
-l1 = ListNode(1)
-l1.next = ListNode(2)
-l1.next.next = ListNode(4)
 
-l2 = ListNode(1)
-l2.next = ListNode(3)
-l2.next.next = ListNode(4)
+class TestValidParen(unittest.TestCase):
 
-# print(l1)
-print(mergeTwoLists(l1, l2))
+    def test_is_valid(self):
+        l1 = ListNode(1)
+        l1.next = ListNode(2)
+        l1.next.next = ListNode(4)
+
+        l2 = ListNode(1)
+        l2.next = ListNode(3)
+        l2.next.next = ListNode(4)
+
+        expected = "1,1,2,3,4,4"
+        actual = merge_two_lists(l1, l2)
+
+        self.assertEqual(expected, actual.__str__())
+
+
+if __name__ == "__main__":
+    unittest.main()
